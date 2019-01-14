@@ -7,6 +7,7 @@ import { CarService } from '../shared/car/car.service';
 })
 export class CarListComponent implements OnInit {
   cars: Array<any>;
+  id;
   constructor(private carService: CarService) { }
 
   ngOnInit() {
@@ -15,10 +16,11 @@ export class CarListComponent implements OnInit {
       console.log("data" + JSON.stringify(data));
     });
   }
-  remove(href) {
-    console.log("DELETE" + JSON.stringify(href));
-    this.carService.remove(href).subscribe(result => {
-
-    }, error => console.error(error));
-  }
+  // remove(href) {
+  //   this.id = href;
+  //   console.log("DELETE" + this.id);
+  //   this.carService.remove(this.id).subscribe((data) => {
+  //     console.log("success");
+  //   });
+  // }
 }

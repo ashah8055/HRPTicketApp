@@ -6,9 +6,25 @@
       </mat-card-title>
     </mat-card-header>
     <mat-card-content>
+      <mat-form-field>
+
+        <select ngModel name="person">
+          <option *ngFor="let myOption of myOptions" [value]="myOption.id">
+            {{ myOption.name }}
+          </option>
+        </select>
+      </mat-form-field><br>
       <input type="hidden" name="href" [(ngModel)]="car.href">
       <mat-form-field>
         <input matInput placeholder="Ticket Name" [(ngModel)]="car.name" required name="name" #name>
+      </mat-form-field><br>
+      <mat-form-field>
+        <input matInput placeholder="Createted By Id" [(ngModel)]="car.createdById" required name="createdById"
+          #createdById>
+      </mat-form-field><br>
+      <mat-form-field>
+        <input matInput placeholder="ticketStatus" [(ngModel)]="car.ticketStatus" required name="ticketStatus"
+          #ticketStatus>
       </mat-form-field>
     </mat-card-content>
     <mat-card-actions>

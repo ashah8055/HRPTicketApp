@@ -13,6 +13,11 @@ export class CarAddComponent implements OnInit, OnDestroy {
   one;
   sub: Subscription;
 
+  myOptions = [
+    { id: 1, name: "Internet" },
+    { id: 2, name: "Laptop" },
+    { id: 3, name: "Pizza" },
+  ];
   constructor(private route: ActivatedRoute,
     private router: Router,
     private carService: CarService) { }
